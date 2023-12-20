@@ -115,11 +115,11 @@ function ChatRoom() {
         <input
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
-          placeholder="say something nice"
+          placeholder="say something"
         />
 
         <button type="submit" disabled={!formValue}>
-          🕊️
+          <i className="fas fa-skull" />
         </button>
       </form>
     </>
