@@ -24,13 +24,19 @@ body {
   padding: 10px;
   box-sizing: border-box;
 }
-
+body {
+  @media (orientation: landscape) {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+}
 .App section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  /* background-color: rgb(40, 37, 53); */
+  background-image: url("./assets/durarara.jpg");
 }
 
 main {
@@ -103,6 +109,8 @@ button:disabled {
   background: white;
   max-width: 400px;
   margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 ul,
@@ -131,14 +139,16 @@ p {
   flex-direction: row-reverse;
 }
 
-.sent p {
+.sent .textpara {
   color: white;
   background: #0b93f6;
   align-self: flex-end;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.received p {
+.received .textpara {
   background: #e5e5ea;
   color: black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 img {

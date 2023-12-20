@@ -4,6 +4,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 import React, { useRef, useState } from "react";
+import sample from "./assets/trip.mp4";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -24,14 +25,30 @@ function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <header>
-        <h1>Chaos Chat</h1>
-        <SignOut />
-      </header>
+    <>
+      <video
+        className="videoTag"
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          zIndex: -1,
+          overflowY: "none",
+          width: "100%",
+        }}
+      >
+        <source src={sample} type="video/mp4" />
+      </video>
+      <div className="App">
+        <header>
+          <h1>Chaos Chat</h1>
+          <SignOut />
+        </header>
 
-      <section>{user ? <ChatRoom /> : <SignIn />}</section>
-    </div>
+        <section>{user ? <ChatRoom /> : <SignIn />}</section>
+      </div>
+    </>
   );
 }
 
@@ -125,6 +142,7 @@ function ChatMessage(props) {
         />
         <div>
           <p
+            className="textpara"
             style={{
               marginBottom: "0px",
             }}
